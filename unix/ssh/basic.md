@@ -65,7 +65,7 @@ SSHコマンドを簡略化するためのconfig作成、すでにある場合�
 
 ```
 Host 接続名(自由)
-    HostName ホスト名
+    HostName ホスト名（IPアドレス）
     User ユーザー名
     IdentityFile ~/.ssh/秘密鍵のファイル名
     Port ポート番号
