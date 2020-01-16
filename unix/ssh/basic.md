@@ -18,3 +18,61 @@
 公開鍵と秘密鍵を生成し、公開鍵をサーバに秘密鍵を操作するクライアントに配置する
 
 クライアントでコマンドのエイリアスの設定をする
+
+# 設定手順
+
+### サーバ側の操作
+
+レンタルサーバなど、サーバが直接操作できない場合は、まずはパスワードでのSSHで操作する
+
+IPアドレスを調べる`ip a`
+
+vimで`/etc/ssh/sshd_config`を開いて編集する
+
+28行目あたり`PemitRootLogin no`に変更する、これでパスワードでのログインができなくなる
+
+※ パスワードでサーバにSSHで接続している場合は後回しにしたほうが良い？
+
+ポートを変更する場合はその変更もする（調べて）
+
+SSH再起動`systemctl restart sshd`
+
+鍵の生成`ssh-keygen -t rsa`
+
+鍵の名前を聞かれるのでつける、パスフレーズは空白で良い、よりセキュアにするなら設定
+
+作成した公開鍵（pubが付いてる方)を移動`sudo mv xxxx.pub ~/.ssh/authorized_keys`
+
+パーミッション（権限）を変更`chmod 600 ~/.ssh/authorized_keys`
+
+USBメモリやファイル転送などで秘密鍵（pubがついていない方）をクライアントに転送する
+
+### クライアント側の操作（Mac）
+
+秘密鍵を移動`sudo mv xxxx ~/.ssh/xxxx`
+
+パーミッション（権限）を変更`chmod 600 ~/.ssh/xxxx`
+
+SSH接続を行う`ssh user@192.168.1.xx -i xxxx -p portNumber`
+
+- userはサーバでログインするユーザ
+- xxxxは設置した秘密鍵のパス
+- ポートを変更していない場合は-p以降不要
+
+※ 接続できない場合は`ping 192.168.1.xx`で物理的につながっているか調べてみる
+
+SSHコマンドを簡略化するためのconfig作成、すでにある場合は追記 `~/.ssh/config`
+
+```
+Host 接続名(自由)
+    HostName ホスト名
+    User ユーザー名
+    IdentityFile ~/.ssh/秘密鍵のファイル名
+    Port ポート番号
+    TCPKeepAlive yes
+    IdentitiesOnly yes
+```
+
+権限を追加 `chmod 600 config`
+
+`ssh 接続名`で接続できることを確認する
