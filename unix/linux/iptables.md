@@ -21,3 +21,7 @@ archLinuxでは初期状態でiptablesがインストールされている
 - 例： `-A TCP -p tcp --dport 80 -j ACCEPT`
 
 SSH接続で設定するときは遮断されないように `systemctl stop iptables` しておく
+
+`iptables -nvL` で現在のFW設定が確認できる
+
+`iptables-restore < /etc/iptables/empty.rules` で設定済のルールをリセットできる
