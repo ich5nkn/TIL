@@ -8,20 +8,20 @@
 
 # コマンド
 
-- `systemd status (demon)`
+- `systemctl status (demon)`
 
   起動中かどうかなどステータスを確認する
   
   確認したいデーモン名を指定することができる
   
-- `systemd start [demon]`
+- `systemctl start [demon]`
 
   デーモンを起動する
   
-- `systemd stop [demon]`
+- `systemctl stop [demon]`
 
   デーモンを終了する
 
-- `systemd enable [demon]`
+- `systemctl enable [demon]`
 
   デーモンの自動起動を有効にする
