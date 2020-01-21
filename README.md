@@ -2,10 +2,12 @@
 Today I learned
 
 # 学びたいこと
-- python
-- API
+- docker
+- linux
+- Apache、nginx
 - node packeage
 - network
 - rooterの機能
 - portとは
-- Apache、nginex
+- API
+- python
