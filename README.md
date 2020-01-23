@@ -10,4 +10,5 @@ Today I learned
 - rooterの機能
 - portとは
 - API
+- firebase
 - python
