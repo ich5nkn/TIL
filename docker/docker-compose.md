@@ -19,7 +19,9 @@ docker-compose down //終了＆削除
   
   - 一番上に書く
   
-  - docker-composeのversion
+  - docker-composeのversion 
+  
+  - versionによって記法が違うので注意、以下はver3系の記法
   
 - `services:`
 
