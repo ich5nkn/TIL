@@ -3,7 +3,7 @@ Today I learned
 
 # 学びたいこと
 - docker
-- k8s
+- k8s (kubernetes)
 
 - linux
 
