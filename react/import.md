@@ -9,3 +9,5 @@
 一部だけをimportする際は中カッコで囲む
 
 例 `import {Drawer} from '@material-ui/core'`
+
+require とほぼ同義（ES2015からはimportが使えるようになった）
