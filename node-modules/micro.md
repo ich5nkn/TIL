@@ -6,5 +6,5 @@ node_modulesのひとつ
 
 expressと同じ様なもの
 
-ルーティングの機能がRooting-Controllersとかぶる
+ルーティングの機能がRouting-Controllersとかぶる
 
