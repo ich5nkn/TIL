@@ -11,7 +11,7 @@ phpファイルをクラスのように階層化して使い回すことがで�
 `@xxx`でbladeのコマンドを記述する
 
 例
-```php:base.blade.php
+```php:hello.php
 <html>
   <head>
     <title>@yield('title')</title>
