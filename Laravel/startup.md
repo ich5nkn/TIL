@@ -19,5 +19,4 @@
   
 - プロジェクト作成
 
-  - `mkdir lara-test & cd lara-test`
-  - `laravel new`
+  - `laravel new {プロジェクト名}`
