@@ -6,20 +6,30 @@ Today I learned
 - k8s (kubernetes)
 
 - linux
+- debean(ubuntu)
+- arch(manjaro)
 
-- Apache、nginx
+- Apache,nginx
+- mySQL,MariaDB
+- MongoDB
 
 - node packeages
 - express
 - socket.io
+- next.js
 
 - network
-- rooterの機能
-- portとは
+- rooter
+- port
+- Wi-Fi
+
+- PHP
+- Larabel
 
 - API
 - GAS(Google Apps Script)
 - firebase
 - python
-- vue
+- vue.js
+- nuxt.js
 - vim
