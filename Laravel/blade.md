@@ -53,6 +53,7 @@ sub
 
 - `@yield` bladeの読み込み
 - `@section` blade(クラスのようなもの)定義
+- `@extends` 親ブレードの継承
 - `@foreach` 繰り返し
 - `@append` 上位ブレードの同じセクションを追記する（？）
 - `@parent` 上位ブレードのセクションをそのまま読み込む
