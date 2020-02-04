@@ -1,5 +1,6 @@
 # TIL
 Today I learned
+初心者を脱出したと自覚できるまで続ける
 
 # 学びたいこと
 - docker
