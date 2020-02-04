@@ -14,4 +14,10 @@
 - Laravelのインストール
 
   - `composer global require "laravel/installer"`
+  - fishでパスを通す
+  - `set -U fish_user_paths $HOME/.composer/vendor/bin $fish_user_paths`
   
+- プロジェクト作成
+
+  - `mkdir lara-test & cd lara-test`
+  - `laravel new`
