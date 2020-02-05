@@ -51,9 +51,30 @@ sub
 </html>
 ```
 
-- `@yield` bladeの読み込み
-- `@section` blade(クラスのようなもの)定義
+よく使うディレクティブ（構文）
+
 - `@extends` 親ブレードの継承
+
+- `@section` セクション(クラスや変数のようなもの)定義
+
+- `@yield` セクションの読み込み、表示
+
+- `@component` コンポーネントの読み込み
+
+  `@component`の中身は`{{$slot}}`に格納される
+  
+- `@slot('key')` component呼び出しの際に`{{$slot}}`以外を渡したいときはkey(名前)をつけて定義する
+
+  その場合つけた名前の変数に格納される
+  
 - `@foreach` 繰り返し
+
 - `@append` 上位ブレードの同じセクションを追記する（？）
+
 - `@parent` 上位ブレードのセクションをそのまま読み込む
+
+
+### 謎
+
+- @section('title','top')のように引数を２つとるsection
+- ちなみに親にtitleというbladeを使っている@yieldは無い
