@@ -55,11 +55,11 @@ sub
 
 - `@extends` 親ブレードの継承
 
-- `@section` セクション(クラスや変数のようなもの)定義
+- `@section('key')` セクション(クラスや変数のようなもの)定義
 
-- `@yield` セクションの読み込み、表示
+- `@yield('key')` セクションの読み込み、表示
 
-- `@component` コンポーネントの読み込み
+- `@component('filepath')` コンポーネントの読み込み
 
   `@component`の中身は`{{$slot}}`に格納される
   
