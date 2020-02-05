@@ -72,9 +72,3 @@ sub
 - `@append` 上位ブレードの同じセクションを追記する（？）
 
 - `@parent` 上位ブレードのセクションをそのまま読み込む
-
-
-### 謎
-
-- @section('title','top')のように引数を２つとるsection
-- ちなみに親にtitleというbladeを使っている@yieldは無い
