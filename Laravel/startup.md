@@ -21,4 +21,8 @@
 
   - `laravel new {プロジェクト名}`
   
-  
+- ローカル起動
+
+  - `php artisan serve`
+  - `127.0.0.1:8000`にローカル実証サーバが立つ
+  - `hello world`したければroutingを変更する
