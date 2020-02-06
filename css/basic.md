@@ -13,6 +13,8 @@ h1{
 
 `:hover`をつけるとマウスオーバー時のCSSを別に設定できる
 
+`:active`をつけるとクリックされている間だけCSSを適用できる
+
 `transition`を指定すると変化をゆっくりにしてアニメーションにできる
 
 ```css
@@ -42,6 +44,10 @@ padding,marginの一括指定
 
 `border-bottom:1px solid #333` 方向を指定してボーダーをつけることもできる
 
+### box-shadow
+
+`box-shadow:5px 10px #000000;` 水平位置、垂直位置、色の順に影を指定する
+
 ### background
 
 `background-image:url(path)` で背景画像の指定ができる
@@ -51,4 +57,20 @@ padding,marginの一括指定
 ### opacity
 
 `opacity:0.3` 透明度を指定できる、０〜１の範囲で０に近いほど透明
+
+### position
+
+HTML要素同士は基本的に重ならないが、positionプロパティを変更すれば重ねれられる
+
+`position:absolute; top:100px; left40px;` でサイトの左上を基準として絶対位置指定ができる
+
+親要素に`position:relative;`と指定するとその要素の左上が基準位置となる
+
+`position:fixed;`を指定すると常に表示領域の左上を基準として配置できる
+
+重なり順は`z-index:10;`のように指定できる、数値が大きいほど上に重なって表示される
+
+### cursor
+
+`cursor:pointer` マウスオーバー時のカーソルの形（Iや指など）を指定できる
 
