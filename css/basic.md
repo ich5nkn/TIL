@@ -84,3 +84,10 @@ HTML要素同士は基本的に重ならないが、positionプロパティを�
 
 スマホ表示のとき`.item { width:100% }` のように書くことで縦並びにするなどの対応が可能になる
 
+### box-sizing
+
+`box-sizing:border-box` を指定すると`width`の指定に`padding`と`border`の幅が含まれるようになる
+
+４つ横に並べる際に`padding`を考えずに`width:25%`で指定すれば良いので便利
+
+基本的に`*{ box-sizing:border-box; }`で全体に適用しておく
