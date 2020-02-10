@@ -88,7 +88,7 @@ HTML要素同士は基本的に重ならないが、positionプロパティを�
 
 これを解消するためにHTMLに`<div class="clear"><div/>` というように空のタグを用意して、
 
-CSSに`.clear{ clear:left; }`と記述して解除するテクニックが使われる
+CSSに`.clear{ clear:left(or both); }`と記述して解除するテクニックが使われる
 
 
 
