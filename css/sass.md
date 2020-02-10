@@ -36,7 +36,7 @@ SASS記法とSCSS記法があるが、SCSS記法がデファクト
 
 スコープも存在するので入れ子を使う場合は宣言する位置に気をつける
 
-## mixin
+## @mixin
 
 `mixin`を使うとcssのスタイルの塊を変数のように扱うことができる
 
@@ -86,11 +86,28 @@ SASS記法とSCSS記法があるが、SCSS記法がデファクト
 
 ```scss
 $parentWidth: 200px;
-width: percentage(50px / parentWidth);
+width: percentage(50px / $parentWidth);
 // width: 25%;
 ```
 
 ### quote($string) unquote($string)
 
 文字列のクオーテーション`"`を付けたり取ったりできる
+
+## @import
+
+`@import "ファイル名";` で外部のファイルを読み込んで変数を使うことができる
+
+`import`元のファイルは名前の先頭に`_`をつける必要がある　例：`_colors.scss`
+
+`import`するときのファイル名は`_`と`.scss`を省略することができる　例`@import "colors";`
+
+
+
+
+
+
+
+
+
 
