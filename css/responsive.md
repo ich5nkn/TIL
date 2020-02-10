@@ -2,7 +2,7 @@
 
 ### viewport
 
-HTMLのheadタグにviewportを埋め込む
+HTMLのheadタグでCSSを読み込む前にviewportを埋め込む
 
 これがないとスマホやタブレットで閲覧時にメディアクエリが正しく機能しない
 
