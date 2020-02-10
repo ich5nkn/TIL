@@ -38,6 +38,8 @@ padding,marginの一括指定
 
 `padding:20px 10px` 上下に20px、左右に10pxの余白指定
 
+文字の間隔は`letter-spacing:5px` で指定
+
 ### border
 
 `border:1px solid red` 太さ、種類（ドットなど）、色の順に指定する
