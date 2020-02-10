@@ -90,30 +90,5 @@ HTML要素同士は基本的に重ならないが、positionプロパティを�
 
 CSSに`.clear{ clear:left; }`と記述して解除するテクニックが使われる
 
-## レスポンシブ 対応
-
-### viewport
-
-HTMLのheadタグにviewportを埋め込む
-
-これがないとスマホやタブレットで閲覧時にメディアクエリが正しく機能しない
-
-```
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
-
-### media
-
-`@media(max-width:670px){ ... }` で画面幅670pxが670px以下のときのCSSを指定できる
-
-スマホ表示のとき`.item { width:100% }` のように書くことで縦並びにするなどの対応が可能になる
-
-### box-sizing
-
-`box-sizing:border-box` を指定すると`width`の指定に`padding`と`border`の幅が含まれるようになる
-
-４つ横に並べる際に`padding`を考えずに`width:25%`で指定すれば良いので便利
-
-基本的に`*{ box-sizing:border-box; }`で全体に適用しておく
 
 
