@@ -20,6 +20,10 @@ Today I learned
 - socket.io
 - next.js
 
+- HTML
+- CSS
+- Sass
+
 - network
 - rooter
 - port
