@@ -4,6 +4,9 @@ Today I learned
 初心者を逸脱できたと自覚するまで続ける
 
 # 学びたいこと
+- WordPress (Theme)
+- EventListener (js)
+
 - docker
 - k8s (kubernetes)
 
@@ -34,6 +37,7 @@ Today I learned
 
 - API
 - GAS(Google Apps Script)
+- HeadLessBrowser
 - firebase
 - python
 - vue.js
