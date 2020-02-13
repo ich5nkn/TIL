@@ -22,4 +22,11 @@ Unix系のOSでは必ずユーザでログインした状態でサービスを�
 
 UID変更のコマンド `usermod -u 変更後のUID 変更したいユーザ名`
 
+※WordPressコンテナで上記のやり方ではうまく行かなかった
+
+Wordpressコンテナではコンテナ起動時にUID33でapacheを動かしているが、そのユーザのUIDを変更してもapacheを動かしているUIDは33のままである
+
+そのため存在しないユーザがUID33でapacheを動かしている状態になってしまう
+
+apache起動前にUIDを変更するdockerFileを作成し、Docker-composeでそれを動かす
 
