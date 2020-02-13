@@ -28,5 +28,5 @@ Wordpressコンテナではコンテナ起動時にUID33でapacheを動かして
 
 そのため存在しないユーザがUID33でapacheを動かしている状態になってしまう
 
-apache起動前にUIDを変更するdockerFileを作成し、Docker-composeでそれを動かす
+apache起動前にUIDを変更するdockerFileを作成・ビルドし、Docker-composeでそれを動かす　[参考](https://qiita.com/nobrin/items/09656089f012184deae1)
 
