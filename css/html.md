@@ -52,3 +52,31 @@ HTML5では特定のブラウザのときのみ発動するコメント文を記
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
 ```
 
+# linkタグ
+
+linkタグはパーマリンク`<a href="~">`とは違い、ブラウザへ向けて書くリンクのタグ
+
+ブラウザや検索エンジンに対しての記述なので`<head>`内に記述する
+
+`<link rel="xxx" href="~" />`が基本形で、`rel`にファイルの種類、`href`にパスを記述する
+
+### CSSの指定
+
+`<link rel="stylesheet" href="style.css">`
+
+### ファビコンの設定
+
+```
+<link rel="icon" href="画像のURL" sizes="32x32" />
+<link rel="icon" href="画像のURL" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="画像のURL" />
+```
+
+`apple-touch~`はスマホでホームにショートカットを生成したときのアイコン（150x150程度のpng推奨）
+
+### 正規URL
+
+`<link rel="canonical" href="正規ページのURL">`
+
+内容が重複するページが生まれた場合に重複ページでSEOが下がるのを防ぐ
+
