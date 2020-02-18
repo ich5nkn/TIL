@@ -37,3 +37,18 @@ idとclassの違いは一意に指定できるかどうか
 idはHTML内に同一の名前をつけることができない
 
 そのためページ内リンクにも用いられる `<a href="#xxx">`
+
+# 条件付きコメント
+
+HTML5では特定のブラウザのときのみ発動するコメント文を記述することができる
+
+例 (wpのheader.php)
+
+```
+<!doctype html>
+
+<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
+```
+
