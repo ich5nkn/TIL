@@ -13,6 +13,6 @@ WordPressでは投稿データや固定ページのデータ、コメントや�
 サムネイル情報やカスタムフィールドの値、プラグインで使用する値などが入っている
 
 メタデータは`get_post_meta`関数でphp内で取得・利用できる　[リファレンス](https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_post_meta)
-
+ [参考：カスタムフィールド取得](https://memocarilog.info/wordpress/theme-custom/3200)
 
 
