@@ -15,6 +15,8 @@ WordPressでは投稿データや固定ページのデータ、コメントや�
 メタデータは`get_post_meta`関数でphp内で取得・利用できる　[リファレンス](https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_post_meta) / 
 [参考：カスタムフィールド取得](https://memocarilog.info/wordpress/theme-custom/3200)
 
+データベース構造について詳しく見るなら[ここ](https://wpdocs.osdn.jp/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E6%A7%8B%E9%80%A0#.E3.83.86.E3.83.BC.E3.83.96.E3.83.AB:_wp_commentmeta)
+
 # wp_posts
 
 ## 主なカラム
@@ -34,3 +36,29 @@ WordPressでは投稿データや固定ページのデータ、コメントや�
 ### menu_order
 
 レコードの並び順をサポートする
+
+# wp_postmeta
+
+wp_postのIDとpost_idを紐付けてメタ情報を保持する
+
+主にカスタムフィールドのデータを管理している
+
+# wp_comments , wp_commentmeta
+
+コメントのデータとそのメタデータを保持している
+
+# wp_users , wp_usermeta
+
+サイトに要録されているユーザ情報を保持している、パスワードは暗号化されている
+
+# wp_terms , wp_termmeta , wp_term_taxonomy
+
+カテゴリやタグなど分類分けに関する情報を保持している
+
+# wp_options
+
+Wordpress全体におけるオプション情報をkey-value形式で保持している
+
+開発者も個別の設定をかんたんに保存・読み込みすることができる
+
+
