@@ -18,3 +18,13 @@ top:50%;
 left: 50%;
 transform:translate(-50%,-50%)
 ```
+
+# Borderを上下だけに付けたい
+
+ボーダータイプ・色の指定と太さの指定を分けることで実現
+
+```css
+border:solid #000;
+border-width: 5px 0 5px 0;
+```
+
