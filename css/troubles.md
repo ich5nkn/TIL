@@ -12,9 +12,9 @@ cssに `*{margin:0;padding:0;}`を指定しておくことで解決
 
 ```css
 /*子要素に指定*/
-    width:100%;
-    text-align:center;
-    top:50%;
-    left: 50%;
-    transform:translate(-50%,-50%)
+width:100%;
+text-align:center;
+top:50%;
+left: 50%;
+transform:translate(-50%,-50%)
 ```
