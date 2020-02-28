@@ -30,7 +30,7 @@ border-width: 5px 0 5px 0;
 
 # Listの行頭に任意の文字（記号）を挿入したい
 
-::beforeでcontentを指定することでCSSから行頭に文字を挿入できる
+`::before`で`content`を指定することでCSSから行頭に文字を挿入できる
 
 `li-mark::before{ content:"☆"; }`
 
