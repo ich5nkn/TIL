@@ -15,6 +15,8 @@
 
 同じサイトの複数のテンプレートで同じパーツを使い回す場合
 
-パーツを外部ファイル化して`get_template_part`を使って呼び出す
+パーツを外部ファイル化して`get_template_part(ファイル名)`を使って呼び出す
+
+`sample.php`の読み込みなら`get_template_part(sample)`、拡張子はつけない
 
 例：[メルカリのプロダクト（Topページと同じパーツを使用）](https://about.mercari.com/products/)
