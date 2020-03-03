@@ -20,3 +20,16 @@
 `sample.php`の読み込みなら`get_template_part(sample)`、拡張子はつけない
 
 例：[メルカリのプロダクト（Topページと同じパーツを使用）](https://about.mercari.com/products/)
+
+# wp_enqueue_style() / wp_enqueue_script()
+
+スタイルシートやJSファイルをキューに追加する関数
+
+例：`wp_enqueue_style([キュー内の名前],[CSSのパス],[array(事前に読み込むCSS)],[version])`
+
+`wp_dequeue_style()`で取り除く事ができる
+
+古いテーマで今はもう動作しないJSファイルなどを使っている場合に取り除く
+
+キューに追加した後はHTMLの`<head>`内に書かれた`wp_head()`で読み込む
+
