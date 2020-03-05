@@ -4,6 +4,8 @@ KintoneはAPIを公開しており、アプリ内の情報を取得したり追�
 
 ## URI
 
+代表的な例
+
 レコード１件取得
 
 `https://(サブドメイン名).cybozu.com/k/v1/record.json`
@@ -12,7 +14,7 @@ KintoneはAPIを公開しており、アプリ内の情報を取得したり追�
 
 `https://(サブドメイン名).cybozu.com/k/v1/records.json`
 
-[その他](https://developer.cybozu.io/hc/ja/articles/360000313406)
+[詳細（リクエストパラメータなども参照）](https://developer.cybozu.io/hc/ja/articles/360000313406)
 
 ## HEAD(認証)
 
