@@ -19,6 +19,7 @@ googleのHTMLが取得できる
 [HTTPコンテキストの指定方法](https://www.php.net/manual/ja/context.http.php)
 
 ```php
+// KintoneAPIで画像を表示させるサンプル
   function viewFile($fileKey){
 
         $subDomain='kttnet';
