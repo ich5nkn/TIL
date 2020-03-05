@@ -22,10 +22,10 @@ googleのHTMLが取得できる
 // KintoneAPIで画像を表示させるサンプル
   function viewFile($fileKey){
 
-        $subDomain='kttnet';
+        $subDomain='SUBDOMAIN';
         $url = 'https://'.$subDomain.'.cybozu.com/k/v1/file.json?fileKey='.$fileKey;
         $headers = [
-            'X-Cybozu-API-Token:IRC3Xb4eAFAbaFGbyIcBmL6oWr2vBjWyl1sS2mHM'
+            'X-Cybozu-API-Token:HOGEHOGE'
         ];
         $options = [
             'http' => [
@@ -49,6 +49,5 @@ googleのHTMLが取得できる
 
         // ファイルデータを表示
         echo $result;
-
     }
 ```
