@@ -33,3 +33,16 @@
 
 キューに追加した後はHTMLの`<head>`内に書かれた`wp_head()`で読み込む
 
+# the_post()
+
+投稿のカウントを＋１する関数？
+
+主にWhileループとセットで使用される
+
+```php
+while( have_posts()):the_post();
+  // 投稿を表示
+endwhile;
+```
+
+`the_post()`がないと永遠にループしてしまう
