@@ -34,6 +34,19 @@ border-width: 5px 0 5px 0;
 
 `li-mark::before{ content:"☆"; }`
 
+List以外のh2などをデコりたいときにも使えた、`background`指定で画像も使える
+
+```css
+.title-deco::before{
+  content:'';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(hogehoge.png) no-repeat 50% 50% ; 
+  margin-right:5px;
+}
+```
+
 # 横並びのリストを線で区切りたい
 
 `リスト１ | リスト２ | リスト３ | リスト４`のような形にしたい
