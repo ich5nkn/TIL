@@ -39,10 +39,16 @@
 
 主にWhileループとセットで使用される
 
-```php
-while( have_posts()):the_post();
-  // 投稿を表示
-endwhile;
+```php<?php
+if ( have_posts() ) :
+	while ( have_posts() ) : the_post();
+		// ループ内のコード
+	endwhile;
+else :
+	echo wpautop( '投稿が見つかりませんでした。 );
+endif;
+?>
+
 ```
 
 `the_post()`がないと永遠にループしてしまう
