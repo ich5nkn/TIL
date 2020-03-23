@@ -1,6 +1,6 @@
-# display
+# display:flex
 
-コンポーネントを任意の位置に配置する
+コンポーネントを横に並べて配置する
 
 ### 親コンポーネント
 
@@ -13,3 +13,7 @@
   
 - `aline-content:'center'`
   - 複数行ある際に縦位置を中央に揃える
+
+- `justify-content:flex-start`
+  - 横揃えを指定する
+  - 左寄せは`flex-start`で右寄せはend
