@@ -1,3 +1,9 @@
+### インタラクティブ(interractive)
+
+対話や双方向という意味をもつ単語
+
+ユーザと対話形式で操作する形態を指す
+
 ### エイジャックス/アジャックス(Ajax)
 
 `Asynchronous JavaScript XML(非同期JavaScript XML)`の略
