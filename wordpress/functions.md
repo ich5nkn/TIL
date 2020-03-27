@@ -63,6 +63,6 @@ endif;
 ```php
 // カスタムフィールドの設定があるときのみ内容を表示するときの例
 <?php if(get_field('text_field')): ?>
-<?php the_field('text_field'); ?>
+<?php echo the_field('text_field'); ?>
 <?php endif; ?>
 ```
