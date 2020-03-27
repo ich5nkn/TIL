@@ -53,3 +53,16 @@ endif;
 ```
 
 `the_post()`がないと永遠にループしてしまう
+
+# get_field() , the_field()
+
+カスタムフィールドの内容を取得する関数
+
+`get_field`で取得して`the_field`で書き出す
+
+```php
+// カスタムフィールドの設定があるときのみ内容を表示するときの例
+<?php if(get_field('text_field')): ?>
+<?php the_field('text_field'); ?>
+<?php endif; ?>
+```
