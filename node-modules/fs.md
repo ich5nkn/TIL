@@ -4,6 +4,8 @@
 
 nodeに標準で組み込まれている
 
+ファイルの入出力は高速な非同期処理と安全な同期処理(Sync)のメソッドがそれぞれ用意されている
+
 # 使い方
 
 `import fs as "fs";` でインポート
@@ -13,5 +15,8 @@ nodeに標準で組み込まれている
 if(!fs.existsSync(path)){
     fs.mkdirSync(path);
 }
+
+// ファイルを同期処理で書き出すサンプル
+fs.writeFileSync("../uploads/" + filename , fileData);
 ```
 
