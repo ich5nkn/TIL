@@ -14,3 +14,16 @@ Route::get('/', function(){
 
 ファイル指定の際にviewsディレクトリまでのパスとblade以降の拡張子は省略できる
 
+# 凡例
+
+実際のプロジェクトでは上記の第2引数に関数を直接指定する書き方はあまりされない
+
+`Route::get('url','ControllerName@methodName')`という書き方が一般的
+
+コントローラの関数を使用する
+
+関数に引数を渡したいときは`Route::get('url/{arg}',controller@method)`のように中括弧で囲んで渡す
+
+コントローラ側の受け取り方`public function hoge($arg){ ... }`
+
+おまじないで第2引数に`Request`を指定する？ `public function hoge($arg ,Request $request){ ... }`
