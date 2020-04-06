@@ -20,7 +20,7 @@
 
 違いは調べてみたがよく分からなかったので`Compact`を基本的に使おうと思う
 
-```
+```php
 // コントローラ
 public function hoge(){
   $value = "HOGEHOGE";
