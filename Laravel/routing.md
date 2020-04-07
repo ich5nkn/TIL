@@ -31,3 +31,9 @@ Route::get('/', function(){
 `Request $request`はおまじないではなく、クエリ文字列を受け取るという設定
 
 `url/hoge?key=value`のようなURLでリクエストを送ると、`$request->key`で`value`が取得できる
+
+# POST
+
+入力フォームなどでViewで入力したデータをコントローラに渡す際はPOSTメソッドを使う
+
+POSTメソッドを使えば様々なデータを渡すことが出来る
