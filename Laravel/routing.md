@@ -26,7 +26,7 @@ Route::get('/', function(){
 
 コントローラ側の受け取り方`public function hoge($arg){ ... }`
 
-~~おまじないで第2引数に`Request`を指定する？ ~~`public function hoge($arg ,Request $request){ ... }`
+~~ おまじないで第2引数に`Request`を指定する？ ~~ `public function hoge($arg ,Request $request){ ... }`
 
 `Request $request`はおまじないではなく、クエリ文字列を受け取るという設定
 
