@@ -36,3 +36,15 @@ docker-compose down //終了＆削除
   - `volumes:` マウントする設定ファイルのパスを指定
   
   - `restart:` 実行時に再起動するか
+
+# CentOSでのDocker-composeのインストール
+
+`yum install docker-compose`ではインストールできない
+
+`sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose`
+
+`1.22.0`の箇所についてはバージョンなので適宜置き換え
+
+`sudo chmod +x /usr/local/bin/docker-compose`
+
+`docker-compose --version`などでインストールできているかを確認
