@@ -4,6 +4,10 @@ PHPはサーバサイドのプログラムのため、JSのようにConsole.log�
 
 [ver_dump](https://www.php.net/manual/ja/function.var-dump.php)関数を使う
 
+`echo`でもできるが、配列などが表示できない
+
+`print_r`で配列も表示できる、こちらは型情報などが無いため`var_dump`と使い分け
+
 # 配列データの整形
 
 `var_dump`で配列データをHTMLに表示させても非常に見づらい
