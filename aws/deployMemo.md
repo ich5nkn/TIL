@@ -153,3 +153,37 @@ PHP Fatal error:  Out of memory (allocated 763371520) (tried to allocate 4096 by
 
 Fatal error: Out of memory (allocated 763371520) (tried to allocate 4096 bytes) in phar:///usr/local/bin/composer/src/Composer/DependencyResolver/RuleWatchGraph.php on line 52
 ```
+
+メモリが足りない・・・？[スワップ](https://wa3.i-3-i.info/word1718.html)というものを試してみることに [[参考サイト]](https://tsukada.sumito.jp/2019/11/26/mmap-failed-12-cannot-allocate-memory/)
+
+```
+$ free
+              total        used        free      shared  buff/cache   available
+Mem:        1006960      218660      696092         636       92208      670584
+Swap:             0           0           0
+
+$ cat /proc/swaps
+$ sudo dd if=/dev/zero of=/swapfile bs=1M count=2048 （ちょっと時間かかった）
+$ sudo chmod 600 /swapfile
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile
+
+$ free
+              total        used        free      shared  buff/cache   available
+Mem:        1006960      221176       64672         636      721112      637444
+Swap:       2097148           0     2097148
+```
+
+これでもう一度composerを動かしてみる
+
+`Your requirements could not be resolved to an installable set of packages.`というエラーが出た
+
+パッケージが足りないという意味らしいのでyumしてくる [[参考サイト]](https://qiita.com/miyzawa/items/c4b786f3a2484bc62ef6)
+
+`sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
+
+同じエラーで動かない、どうやら5.4のパッケージがインストールされた模様
+
+`sudo yum install --disablerepo=* --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
+
+でやってみるものの、エラー
