@@ -87,9 +87,11 @@ $ sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 インストールしたいバージョンを指定、パッケージは任意（今回は分からなかったためそのまま）
 $ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt
+```
 エラーになった（php-mcryptパッケージが問題？）
 
 とりあえずphpだけでも入れることにした
+```
 $ sudo yum install --enablerepo=remi,remi-php74 php
 $ php --version
 ```
