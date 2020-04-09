@@ -39,9 +39,11 @@ Dockerのユーザグループに権限を付与したり色々した
 ```
 Docker-Composeのインストール（バージョンは適宜置き換え）
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
 バイナリの実行権限付与（？）
 $ chmod +x /usr/local/bin/docker-compose
-確認
+
+docker-composeインストール確認
 $ docker-compose --version
 
 Dockerユーザがすでに存在するか確認
@@ -85,7 +87,9 @@ $ sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 インストールしたいバージョンを指定、パッケージは任意（今回は分からなかったためそのまま）
 $ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt
-エラーになった（php-mcryptパッケージが問題？）、とりあえずphpだけでも入れることにした
+エラーになった（php-mcryptパッケージが問題？）
+
+とりあえずphpだけでも入れることにした
 $ sudo yum install --enablerepo=remi,remi-php74 php
 $ php --version
 ```
