@@ -180,10 +180,23 @@ Swap:       2097148           0     2097148
 
 パッケージが足りないという意味らしいのでyumしてくる [[参考サイト]](https://qiita.com/miyzawa/items/c4b786f3a2484bc62ef6)
 
-`sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
+`$ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
 
 同じエラーで動かない、どうやら5.4のパッケージがインストールされた模様
 
-`sudo yum install --disablerepo=* --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
+`$ sudo yum install --disablerepo=* --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
 
 でやってみるものの、エラー
+
+パッケージの名前が違っていた模様、php7.4では`php74-php-mbstring`という名前になっている
+
+`$ sudo yum install php74-php-mbstring`でインストールできた
+
+php5.4などのシステムを動かすためバージョンごとに別パッケージとして公開している（RedHat系Linuxの特徴らしい）
+
+パッケージ名は補完などをしてくれないので`yum search mbstring`などで検索するかググるかで正式名称を取得する
+
+composerを動かすとDOMも無いと怒られたので`$ yum install php74-php-xml`
+
+ついに`composer update`が動いた
+
