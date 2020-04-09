@@ -134,4 +134,22 @@ php7.4をインストール
 ```
 $ source /etc/profile.d/modules.sh
 $ module load php74
+$ php -v
+PHP 7.4.4 (cli)
+```
+
+どうやら無事にPHP7.4が入ったようなので`composer update`を実行したがエラー
+
+```
+$ composer update
+
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+
+mmap() failed: [12] Cannot allocate memory
+
+mmap() failed: [12] Cannot allocate memory
+PHP Fatal error:  Out of memory (allocated 763371520) (tried to allocate 4096 bytes) in phar:///usr/local/bin/composer/src/Composer/DependencyResolver/RuleWatchGraph.php on line 52
+
+Fatal error: Out of memory (allocated 763371520) (tried to allocate 4096 bytes) in phar:///usr/local/bin/composer/src/Composer/DependencyResolver/RuleWatchGraph.php on line 52
 ```
