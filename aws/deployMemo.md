@@ -100,7 +100,7 @@ $ php --version
 baseリポジトリのphp5.4が優先的にインストールされるみたい
 
 
-もう一度削除して、baseリポジトリを無効にして追加したリポジトリのみ参照してみる
+もう一度削除して、baseリポジトリを無効にして追加したリポジトリのみ参照してインストールしてみる
 
 ```
 $ sudo yum install --disablerepo=* --enablerepo=epel,remi,remi-safe,remi-php74 php
@@ -119,4 +119,5 @@ $ sudo yum install libncurses.so.5
 $ sudo yum install libtinfo.so.5
 ```
 
-インストールして再度実行したが同じエラーになる
+インストールして再度実行したが同じエラーになる、(64bit)っていうのが怪しそう
+
