@@ -200,3 +200,7 @@ composerを動かすとDOMも無いと怒られたので`$ yum install php74-php
 
 ついに`composer update`が動いた
 
+再起動して、接続できるか確認したが、接続できなかった
+
+ついでにcomposerも行方不明になっていた（？）
+
