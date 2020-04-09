@@ -51,7 +51,11 @@ $ cat /etc/group | grep docker
 Dockerユーザに権限付与
 $ sudo usermod -aG docker $USER
 $ groups $USER
+```
 
+インストール終わったのでdockerとcomposer（yarn的なやつ）を動かす
+
+```
 $ cd ~/projects/kintoneTest
 $ docker-compose up -d
 $ composer update (めっちゃ時間かかる)
@@ -81,11 +85,11 @@ $ yum install php
 
 baseリポジトリ（公式）以外のところから持ってこないといけないらしい
 ```
-EPELとRemiリポジトリを追加(?)
+EPELとRemiリポジトリを追加
 $ sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 $ sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
-インストールしたいバージョンを指定、パッケージは任意（今回は分からなかったためそのまま）
+インストールしたいバージョンを指定、パッケージは任意（よく分からないため、参考サイトそのまま）
 $ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt
 ```
 エラーになった（php-mcryptパッケージが問題？）
@@ -95,10 +99,9 @@ $ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-p
 $ sudo yum install --enablerepo=remi,remi-php74 php
 $ php --version
 ```
-５．４．１６が入っている・・・なんで・・・・どうして・・・・・
+5．4．16が入っている・・・なんで・・・・どうして・・・・・
 
-baseリポジトリのphp5.4が優先的にインストールされるみたい
-
+baseリポジトリのphp5.4.16が優先的にインストールされるみたい
 
 もう一度削除して、baseリポジトリを無効にして追加したリポジトリのみ参照してインストールしてみる
 
@@ -119,5 +122,5 @@ $ sudo yum install libncurses.so.5
 $ sudo yum install libtinfo.so.5
 ```
 
-インストールして再度実行したが同じエラーになる、(64bit)っていうのが怪しそう
+インストールして再度実行したが同じエラーになる、(64bit)っていうのが怪しそう？
 
