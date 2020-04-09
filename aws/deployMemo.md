@@ -83,7 +83,7 @@ $ yum install php
 ```
 ↑これで最新こないかなーと思ったが5.4だったのでキャンセル
 
-baseリポジトリ（公式）以外のところから持ってこないといけないらしい [[参考サイト]](https://qiita.com/heimaru1231/items/84d0beca81ca5fdcffd0)
+baseリポジトリ（公式）以外のところから持ってこないといけないらしい [[参考サイト]](https://qiita.com/ozawan/items/caf6e7ddec7c6b31f01e)
 ```
 EPELとRemiリポジトリを追加
 $ sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -101,7 +101,7 @@ $ php --version
 ```
 5.4.16が入っている・・・なんで・・・・どうして・・・・・
 
-baseリポジトリのphp5.4.16が優先的にインストールされるみたい
+baseリポジトリのphp5.4.16が優先的にインストールされるみたい [[参考サイト]](https://qiita.com/heimaru1231/items/84d0beca81ca5fdcffd0)
 
 もう一度削除して、baseリポジトリを無効にして追加したリポジトリのみ参照してインストールしてみる
 
