@@ -34,8 +34,6 @@ PHP、Composer、Docker、Docker-Composeをインストール
 
 Docker-Composeはyumでインストールできなくてcurlでインストールした
 
-Dockerのユーザグループに権限を付与したり色々した
-
 ```
 Docker-Composeのインストール（バージョンは適宜置き換え）
 $ sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -45,7 +43,9 @@ $ chmod +x /usr/local/bin/docker-compose
 
 docker-composeインストール確認
 $ docker-compose --version
-
+```
+Dockerのユーザグループに権限を付与したり色々した
+```
 Dockerユーザがすでに存在するか確認
 $ cat /etc/group | grep docker
 Dockerユーザに権限付与
