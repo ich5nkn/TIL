@@ -83,7 +83,7 @@ $ yum install php
 ```
 ↑これで最新こないかなーと思ったが5.4だったのでキャンセル
 
-baseリポジトリ（公式）以外のところから持ってこないといけないらしい
+baseリポジトリ（公式）以外のところから持ってこないといけないらしい [[参考サイト]](https://qiita.com/heimaru1231/items/84d0beca81ca5fdcffd0)
 ```
 EPELとRemiリポジトリを追加
 $ sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -99,7 +99,7 @@ $ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-p
 $ sudo yum install --enablerepo=remi,remi-php74 php
 $ php --version
 ```
-5．4．16が入っている・・・なんで・・・・どうして・・・・・
+5.4.16が入っている・・・なんで・・・・どうして・・・・・
 
 baseリポジトリのphp5.4.16が優先的にインストールされるみたい
 
@@ -124,3 +124,14 @@ $ sudo yum install libtinfo.so.5
 
 インストールして再度実行したが同じエラーになる、(64bit)っていうのが怪しそう？
 
+このへんで意味がわからくなったため別のやり方をためす
+
+php7.4をインストール
+
+`$ yum install php74`
+
+良く分からないけど[[このまま]](http://coechama-hobby.blog.jp/archives/836608.html)
+```
+$ source /etc/profile.d/modules.sh
+$ module load php74
+```
