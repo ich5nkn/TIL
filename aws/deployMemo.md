@@ -113,3 +113,10 @@ $ sudo yum install --disablerepo=* --enablerepo=epel,remi,remi-safe,remi-php74 p
              要求: libtinfo.so.5()(64bit)
 ```
 `libncurses.so.5`と`libtinfo.so.5`が無いというエラーだと思われる
+
+```
+$ sudo yum install libncurses.so.5
+$ sudo yum install libtinfo.so.5
+```
+
+インストールして再度実行したが同じエラーになる
