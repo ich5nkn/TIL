@@ -72,6 +72,8 @@ Reading /home/ec2-user/.cache/composer/repo/https---repo.packagist.org/provider-
 ここでとまっていた
 ```
 
+### PHPのバージョン変更
+
 PHPのバージョン（開発環境 v7.4.2 / EC2 v5.4.16）が関係するのではと思いバージョンアップ
 
 ※ EC2のデフォルトはPHP5.4.16が入っているがPHPはバージョンの違いで割と変わるため入れ直すのが吉
@@ -138,6 +140,12 @@ $ php -v
 PHP 7.4.4 (cli)
 ```
 
+※このやり方（source）は`bashrc`などを追加読み込みする時の方法なので、違うセッションでは反映されない
+
+正しくは、`/usr/bin/php`として`/usr/bin/php74`のシンボリックリンクを作るらしい（やってもらった）
+
+### Composerを動かす
+
 どうやら無事にPHP7.4が入ったようなので`composer update`を実行したがエラー
 
 ```
@@ -186,7 +194,7 @@ Swap:       2097148           0     2097148
 
 `$ sudo yum install --disablerepo=* --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
 
-でやってみるものの、エラー
+でやってみるものの、エラー（存在しないみたい？）
 
 パッケージの名前が違っていた模様、php7.4では`php74-php-mbstring`という名前になっている
 
@@ -200,4 +208,10 @@ composerを動かすとDOMも無いと怒られたので`$ yum install php74-php
 
 ついに`composer update`が動いた
 
+### .envファイルの準備
+
 再起動して、接続できるか確認したが、接続できなかった
+
+原因は`.env`ファイルが無かったため、`git clone`したときは`.gitignore`で必要なファイルがないか確認する
+
+無事、起動してブラウザからURLでアクセスできたので完了
