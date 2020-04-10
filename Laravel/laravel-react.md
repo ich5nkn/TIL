@@ -16,6 +16,6 @@ $ npm install
 $ npm run dev
 ```
 
-なんかいっぱい追加された
+なんかいっぱい変更と追加された
 
 ![2020-04-10 16 15 57](https://user-images.githubusercontent.com/56820273/78971729-2876f300-7b47-11ea-9326-14abd8d3315a.png)
