@@ -29,10 +29,10 @@
 
 - すでにプロジェクトがある場合
 
- - GitなどでClone
- - ディレクトリ内で`composer update`
- - 起動はDockerで行う or ローカル起動
+  - GitなどでClone
+  - ディレクトリ内で`composer update`
+  - 起動はDockerで行う or ローカル起動
  
 - laravelバージョン確認
 
- - laravelディレクトリ内で`php artisan -V`
+  - laravelディレクトリ内で`php artisan -V`
