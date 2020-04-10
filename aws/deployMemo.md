@@ -22,15 +22,15 @@ $ sudo systemctl status httpd
 
 ブラウザからURLを叩いたところ、うまく表示されなかった
 
-セキュリティグループの問題だったらしく、AWSコンソールから権限を修正してもらった
+セキュリティグループの問題だったらしく、AWSコンソールから権限を修正してもらい、Apacheの初期画面が表示された
 
 ### インストールなど
 
 初期状態はほぼデフォルトのCentOS7なため、必要なものなどをインストールしていく
 
-ソースをGitで共有して配置する、今回は`~/projects/`内に配置
+Git、PHP、Composer、Docker、Docker-Composeをインストール
 
-PHP、Composer、Docker、Docker-Composeをインストール
+ソースをGitで共有して配置する、今回は`~/projects/`内に配置
 
 Docker-Composeはyumでインストールできなくてcurlでインストールした
 
@@ -61,15 +61,15 @@ $ docker-compose up -d
 $ composer update (めっちゃ時間かかる)
 ```
 
-一時間ほど待っても完了していなかったため、流石におかしいとおもって`Ctrl+C`で停止
+一時間ほど経っても完了していなかったため、流石におかしいと思って`Ctrl+C`で停止
 
-vvvオプションをつけると逐一状況を表示してくれるらしいので実行
+vvvオプションをつけると逐一状況を表示してくれるらしいので指定して実行
 
 ```
 $ composer update -vvv
 ~~~（中略）~~~
 Reading /home/ec2-user/.cache/composer/repo/https---repo.packagist.org/provider-phpunit$phpunit.json from cache
-ここでとまっていた
+↑ここでとまっていた
 ```
 
 ### PHPのバージョン変更
@@ -190,7 +190,7 @@ Swap:       2097148           0     2097148
 
 `$ sudo yum install --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
 
-同じエラーで動かない、どうやら5.4のパッケージがインストールされた模様
+同じエラーで動かない、どうやら5.4のパッケージがインストールされた模様、また5.4が邪魔をする
 
 `$ sudo yum install --disablerepo=* --enablerepo=remi,remi-php74 php php-devel php-mbstring php-pdo php-gd`
 
@@ -200,9 +200,9 @@ Swap:       2097148           0     2097148
 
 `$ sudo yum install php74-php-mbstring`でインストールできた
 
-php5.4などのシステムを動かすためバージョンごとに別パッケージとして公開している（RedHat系Linuxの特徴らしい）
+RedHat系Linuxではphp5.4などのシステムを動かすためバージョンごとに別パッケージとして公開している（嫌がらせではない）
 
-パッケージ名は補完などをしてくれないので`yum search mbstring`などで検索するかググるかで正式名称を取得する
+パッケージ名は補完などをしてくれないので`yum search mbstring`などで検索するかググるかで正式名称を取得すると良い
 
 composerを動かすとDOMも無いと怒られたので`$ yum install php74-php-xml`
 
@@ -212,6 +212,8 @@ composerを動かすとDOMも無いと怒られたので`$ yum install php74-php
 
 再起動して、接続できるか確認したが、接続できなかった
 
-原因は`.env`ファイルが無かったため、`git clone`したときは`.gitignore`で必要なファイルがないか確認する
+しばらく原因が分からず、ディレクトリの位置を変えたり権限周りを触ったりしていたが、単純な話だった
+
+原因は`.env`ファイルが無かったため。`git clone`したときは`.gitignore`で必要なファイルがないか確認する
 
 無事、起動してブラウザからURLでアクセスできたので完了
