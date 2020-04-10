@@ -1,6 +1,6 @@
 # Laravelの始め方
 
-- Composerのインストール
+- Composerのインストール(yarnのようなもの)
 
   - `brew install composer`
 
@@ -26,3 +26,13 @@
   - `php artisan serve`
   - `127.0.0.1:8000`にローカル実証サーバが立つ
   - `hello world`したければroutingを変更する
+
+- すでにプロジェクトがある場合
+
+ - GitなどでClone
+ - ディレクトリ内で`composer update`
+ - 起動はDockerで行う or ローカル起動
+ 
+- laravelバージョン確認
+
+ - laravelディレクトリ内で`php artisan -V`
