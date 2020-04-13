@@ -1,5 +1,5 @@
 # TIL
-Today I learned
+Today I learned (今日学んだこと)
 
 初心者を逸脱できたと自覚するまで続ける
 
