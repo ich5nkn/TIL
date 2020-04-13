@@ -43,3 +43,4 @@ Today I learned (今日学んだこと)
 - vue.js
 - nuxt.js
 - vim
+- bootstrap
