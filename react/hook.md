@@ -14,7 +14,7 @@ const [count, setCount] = useState(0)
 
 これで値が0のcountというstateが生成される、countはstateなので直接更新せずにsetCountで更新する
 
-```
+```js
 return (
     <div>
       <p>You clicked {count} times</p>
