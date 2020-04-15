@@ -8,7 +8,7 @@
 
 stateの初期値を引数に取り、stateとそれを更新する関数のセットを生成する
 
-```
+```js
 const [count, setCount] = useState(0)
 ```
 
@@ -31,7 +31,7 @@ return (
 
 完成形の全体図
 
-```
+```js
 import React, { useState } from 'react';
 
 function Example() {
@@ -53,4 +53,26 @@ function Example() {
 
 クラスのcomponentDidMountなどに相当する
 
-### 正直良く分からない
+使用するにはimportが必要
+
+```js
+useEffect (()=>{
+    // render後に実行したい処理
+})
+```
+
+uesEffectに記述した内容はrender後に実行される
+
+asyncを直接使うことは出来ない
+
+```js
+useEffect (()=>{
+    const func = async()=>{
+        await setJson(props.json)
+        console.log(json)
+    }
+    func()
+})
+```
+
+このようにasyncを使う関数を定義して実行する必要がある
