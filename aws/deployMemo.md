@@ -217,3 +217,17 @@ composerを動かすとDOMも無いと怒られたので`$ yum install php74-php
 原因は`.env`ファイルが無かったため。`git clone`したときは`.gitignore`で必要なファイルがないか確認する
 
 無事、起動してブラウザからURLでアクセスできたので完了
+
+# バージョンアップ
+
+ローカルPCで開発した後にサーバで最新にバージョンアップする必要がある
+
+```
+$ cd project/hoge
+$ docker-compose down
+$ git pull
+$ npm install //package追加したとき
+$ docker-compose up -d
+```
+
+npmをインストールしていなかったため、インストールした
