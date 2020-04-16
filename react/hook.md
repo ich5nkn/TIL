@@ -66,12 +66,16 @@ setCountがループの中で呼び出されている場合、countの値はル�
 
 クラスのcomponentDidMountなどに相当する
 
+mount時、render後に毎回実行する
+
+第２引数に配列を指定すると、render時に配列内の変数の値が変更されたときのみ実行する
+
 使用するにはimportが必要
 
 ```js
 useEffect (()=>{
     // render後に実行したい処理
-})
+},[useEffectに使いたい変数])
 ```
 
 uesEffectに記述した内容はrender後に実行される
@@ -89,3 +93,4 @@ useEffect (()=>{
 ```
 
 このようにasyncを使う関数を定義して実行する必要がある
+
