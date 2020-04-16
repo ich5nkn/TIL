@@ -51,7 +51,7 @@ function Example() {
 
 stateの更新関数内でstateを使用するときは、更新関数の中身を関数で書いたほうが安全
 
-```
+```js
 // 例
 setCount(count + 1)
 // 中身を関数にする
