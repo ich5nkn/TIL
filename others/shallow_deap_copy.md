@@ -40,7 +40,7 @@ console.log(arrCopy) // [1,2,3,4]
 
 破壊的なメソッドは配列自体を操作するメソッドや、元配列に影響を及ぼす
 
-```
+```js
 var arr = [1,2,3,4]
 var arrPickup = arr.splice(2,2) // index2 ~ 2つを切り出す
 
@@ -66,5 +66,31 @@ console.log(arrPickup) // [3,4]
 
 例えば`slice`は指定した範囲の配列を作成するが、引数が空だと同じ配列（コピー）を作成する
 
+# 多次元配列のディープコピー
 
+`slice`でディープコピーが出来るのは１次元配列のみである [[参考]](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
+配列の中身はシャローコピーであるため、配列の中に配列がある場合は完全なディープコピーにならない
+
+```js
+var arr = [[11,12,13],[21,22,23],[31,32,33]]
+var arrCopy = arr.slice()
+
+arr[0].push(14)
+
+console.log(arr[0]) // [11,12,13,14]
+console.log(arrCopy[0]) // [11,12,13,14]
+
+```
+
+この場合は`map`を使い、内側の配列をひとつずつディープコピーすると良い
+
+```js
+var arr = [[11,12,13],[21,22,23],[31,32,33]]
+var arrCopy = arr.map(arrChild => arrChild.slice())
+
+arr[0].push(14)
+
+console.log(arr[0]) // [11,12,13,14]
+console.log(arrCopy[0]) // [11,12,13]
+```
