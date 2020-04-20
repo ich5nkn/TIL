@@ -1,15 +1,15 @@
-#Grid Item Props
+# Grid Item Props
 
-RGL supports the following properties on grid items or layout items. When initializing a grid, build a layout array (as in the first example above), or attach this object as the data-grid property to each of your child elements (as in the second example).
+RGLは、グリッドアイテムまたはレイアウトアイテムで次のプロパティをサポートします。グリッドを初期化するときは、（上記の最初の例のように）レイアウト配列を作成するか、このオブジェクトをdata-gridプロパティとして各子要素にアタッチします（2番目の例のように）。
 
-Note that if a grid item is provided but incomplete (missing one of x, y, w, or h), an error will be thrown so you can correct your layout.
+グリッドアイテムが提供されているが不完全な場合（x、y、w、またはhのいずれかが欠落している場合）、レイアウトを修正できるようにエラーがスローされることに注意してください。
 
-If no properties are provided for a grid item, one will be generated with a width and height of 1.
+グリッドアイテムにプロパティが指定されていない場合は、幅と高さが1のプロパティが生成されます。
 
-You can set minimums and maximums for each dimension. This is for resizing; it of course has no effect if resizing is disabled. Errors will be thrown if your mins and maxes overlap incorrectly, or your initial dimensions are out of range.
+各ディメンションの最小値と最大値を設定できます。これはサイズ変更用です。もちろん、サイズ変更が無効になっている場合は効果がありません。最小値と最大値が正しくオーバーラップしていない場合、または初期の寸法が範囲外の場合、エラーがスローされます。
 
-Any <GridItem> properties defined directly will take precedence over globally-set options. For example, if the layout has the property isDraggable: false, but the grid item has the prop isDraggable: true, the item will be draggable, even if the item is marked static: true.
-
+直接定義された<GridItem>プロパティは、グローバルに設定されたオプションよりも優先されます。たとえば、レイアウトのプロパティがisDraggable：falseで、グリッドアイテムのプロパティがisDraggable：trueである場合、アイテムがstatic：trueとマークされていても、アイテムはドラッグ可能になります。
+  
 ```js
 {
 
