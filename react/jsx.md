@@ -56,3 +56,13 @@ render: function(){
   );
 }
 ```
+
+# inputコンポーネントのチェックボックス
+
+HTMLの`<input　type="checkbox">`では、初期値の指定に`checked`を使うが、
+
+reactでは`checked`は現在のチェック値(bool)であり、初期値は`defaultChecked`を使うので注意
+
+`checked={true}`としてしまうと、チェック済状態から切り替わらなくなってしまう
+
+`checked`にチェック値を管理するStateを設定して`onClick`などで切り替えるのが一般的?
