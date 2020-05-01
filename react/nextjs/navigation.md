@@ -20,3 +20,8 @@ import Link from 'next/link'
 
 ページ遷移がJavaScriptを使って行われるのでブラウザのページ遷移よりも高速になる（ajax？）
 
+Next.jsアプリ外のページへのリンクは`<a>`タグで行う
+
+`className`などの属性は、Linkタグではなく`<a>`タグに加える
+
+[[Linkコンポーネントのリファレンス]](https://nextjs.org/docs/api-reference/next/link)
