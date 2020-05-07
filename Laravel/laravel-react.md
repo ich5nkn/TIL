@@ -26,6 +26,8 @@ $ npm run dev
 
 `resources/js/app.js`で`require`してある、追加するときはここに`require`を足せば良さそう
 
+`require`するために、exportする必要はある
+
 新しくテスト用のViewを作成(`resources/views/example.blade.php`)
 
 ```
