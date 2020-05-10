@@ -8,7 +8,7 @@ Nextでは下記の３つのタイミングでのレンダリングを任意で�
 
 - リクエストが発生した際にサーバ上でレンダリングを行うサーバサイドレンダリング
 
-- クライアント側でレンダリングを行う(通常のJSと同じタイミング)
+- クライアント側でレンダリングを行うクライアントサイドレンダリング(通常のJSと同じタイミング)
 
 # プリレンダリング
 
@@ -20,7 +20,7 @@ Nextでは下記の３つのタイミングでのレンダリングを任意で�
 
 ### 使い方
 
-```
+```js
 import {dataGetter} from '../lib/datas' // データを取得するメソッド （中身は省略）
 
 // getStaticPropsメソッド
@@ -41,3 +41,31 @@ export default function Page({data}){
 ```
 
 [getStaticPropsのリファレンス](https://nextjs.org/docs/basic-features/data-fetching)
+
+# サーバサイドレンダリング
+
+サーバサイドレンダリングは外部データをリクエストのタイミングで取得する際に用いる
+
+プリレンダリングよりは速度が落ちる
+
+`getStaticProps`の代わりに`getServerSideProps`を使う
+
+```js
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      // コンポーネントに渡すための props
+    }
+  }
+}
+```
+
+[getServerSidePropsのリファレンス](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)
+
+# クライアントサイドレンダリング
+
+ダッシュボードのようなページを作成するときは、レイアウトなどはプリレンダリングを行い、データ部はクライアントサイドでレンダリングを行うなどの手法ができる
+
+SWRというデータフェッチ用のReactフックを使うことが推奨されている
+
+[SWRのリファレンス](https://swr.now.sh/)
