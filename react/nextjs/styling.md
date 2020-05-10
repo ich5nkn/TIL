@@ -91,7 +91,7 @@ img {
 
 アプリ全体に読み込むには、`pages`ディレクトリ配下に`_app.js`を作成し、下記のように書く
 
-```
+```js
 import '../styles/global.css'
 
 export default function App ({Component, pageProps}){
