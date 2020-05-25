@@ -18,7 +18,7 @@ APIサーバ、バックエンドの処理を行う
 
 - ### Cloud Firestore
 
-データベース
+データベース（NoSQLベース）
 
 Realtime Databaseという古いバージョンのデータベースもある（現在は非推奨）
 
