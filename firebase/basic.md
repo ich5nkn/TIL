@@ -12,14 +12,16 @@ Webページを公開する
 
 APIサーバ、バックエンドの処理を行う
 
-### Storage
+- ### Storage
 
 画像や静的なファイルを格納するストレージ
 
-### Cloud Firestore
+- ### Cloud Firestore
 
 データベース
 
-### Authentication
+Realtime Databaseという古いバージョンのデータベースもある（現在は非推奨）
+
+- ### Authentication
 
 ユーザ認証機能
