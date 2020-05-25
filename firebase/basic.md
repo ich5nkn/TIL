@@ -4,11 +4,11 @@ Googleが提供しているBaaS (Backend as a Service)
 
 以下の５つの機能をメインに提供している
 
-### Hosting 
+- ### Hosting 
 
 Webページを公開する
 
-### Cloud Functions
+- ### Cloud Functions
 
 APIサーバ、バックエンドの処理を行う
 
