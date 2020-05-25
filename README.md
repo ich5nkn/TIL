@@ -16,7 +16,7 @@ Today I learned (今日学んだこと)
 
 - Apache,nginx
 - mySQL,MariaDB
-- MongoDB
+- MongoDB(NoSQL)
 
 - node packeages
 - express
@@ -38,7 +38,7 @@ Today I learned (今日学んだこと)
 - API
 - GAS(Google Apps Script)
 - HeadLessBrowser
-- firebase
+- firebase(Deploy,DB,APIs)
 - python
 - vue.js
 - nuxt.js
