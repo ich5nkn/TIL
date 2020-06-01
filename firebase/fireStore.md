@@ -34,4 +34,47 @@ FireStoreのサーバをどこの地域のものを使うかの設定
 
 # firebaseの使い方（設定）
 
+### Firebaseのアカウントを作成する
+
+公式サイトから登録するGoogleのサービスのため、Googleアカウントがあれば良い
+
+### Firebase上にプロジェクトを作る
+
+「新しいプロジェクトを生成する」からプロジェクトを作成する
+
+### FireStoreの環境を作成する（FireStoreを使用する場合）
+
+開発タブのFireStoreを開き、使用を開始する
+
+ロケーションの選択では日本を選ぶ(NouthEastAsia1,2)
+
+### FirebaseCLIのインストール
+
+`yarn global add firebase-tools`
+
+`firebase --version`でインストールされているか確認
+
+### CLIからFirebaseにログインする
+
+`firebase login`
+
+Yを押すと、ブラウザが立ち上がってgoogleアカウントを選択できるのでそのまま認証する
+
+`firebase projects:list`で自分のプロジェクトが表示されればログイン成功している
+
+### プロジェクトと開発環境を紐付ける
+
+アプリのディレクトリで`firebase init`
+
+なんのサービスを使うか選択できるので、スペースキーでチェックを入れる
+
+今回はFireStoreを選択
+
+プロジェクトはどうするのか聞いてくるので、`Use an existing project`（既にあるプロジェクトを使う）を選択
+
+作成していたプロジェクトを選択する
+
+ルールについての設定を聞いてくるがデフォルトのままにした
+
+調べたがよくわからなかった [[一応参考]]https://qiita.com/zaburo/items/e82cff108690eb0493c0
 
