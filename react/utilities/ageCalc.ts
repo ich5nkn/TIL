@@ -1,3 +1,5 @@
+// 誕生日の日付を受け取って現在の年齢を返すコンポーネント
+
 export default (birthday: Date) => {
     const today = new Date()
     const y1 = today.getFullYear().toString().padStart(4, '0');
