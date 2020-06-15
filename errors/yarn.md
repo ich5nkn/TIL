@@ -1,6 +1,6 @@
 # yarn
 
-### The `yarn' command exists in these Node versions: xx.xx.x
+### The 'yarn' command exists in these Node versions: xx.xx.x
 
 特定のnodeでしかyarnが使えないという内容
 
@@ -11,3 +11,10 @@
 `which yarn` でyarnが格納されているディレクトリを調べ、npm配下だったら削除
 
 HomeBrewからyarnをインストールし直せば解決した
+
+### Incorrect integrity when fetching from the cache
+
+グローバルキャッシュが原因のエラーらしい？
+
+
+`$ yarn cache clean` で解決
