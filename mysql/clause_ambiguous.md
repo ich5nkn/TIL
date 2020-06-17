@@ -6,4 +6,4 @@ where区のisDeleteがあいまいですという内容のエラー
 
 リレーション先のテーブルにもisDeleteフィールドが存在したため特定できずに発生していた
 
-``TableName`.isDelete`とすることで解決
+`'TableName'.isDelete`とすることで解決（シングルクォートは`記号）
