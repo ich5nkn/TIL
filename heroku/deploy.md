@@ -35,3 +35,5 @@ MySQLも使えるらしい [[参考 Qiita]](https://qiita.com/koukidesu/items/21
 `git push heroku master`
 
 浄化槽ではherokuにプッシュしたら自動でbuild & startするように設定してある
+
+`master`ブランチじゃないとビルドされないようなので注意
