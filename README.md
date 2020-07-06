@@ -11,6 +11,7 @@ Today I learned (今日学んだこと)
 - k8s (kubernetes)
 
 - linux
+- systemctl
 - debean(ubuntu)
 - arch(manjaro)
 
@@ -21,7 +22,8 @@ Today I learned (今日学んだこと)
 - node packeages
 - express
 - socket.io
-- next.js
+- Next.js
+- material-UI
 
 - HTML
 - CSS
@@ -34,13 +36,27 @@ Today I learned (今日学んだこと)
 
 - PHP
 - Larabel
+- Lumen
 
 - API
 - GAS(Google Apps Script)
 - HeadLessBrowser
+- HeadLessCMS(Contentful)
+
 - firebase(Deploy,DB,APIs)
+- AWS EC2
+- AWS Fargate
+- Heroku
+- Vercel
+
 - python
 - vue.js
 - nuxt.js
 - vim
 - bootstrap
+
+- TestingLibrary
+- jest
+
+- sketch
+- figma
