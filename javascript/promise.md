@@ -24,4 +24,8 @@ console.log(promise)
 const promise = fetch.get('hoge')
 promise.then((res)=> console.log(res))
 // Fetchした結果が表示される
+
+const promise = await fetch.get('hoge')
+console.log(promise)
+// async/awaitで書くとこう（async function内が前提）
 ```
