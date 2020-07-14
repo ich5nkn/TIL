@@ -1,12 +1,11 @@
 # map処理でasync/awaitを使う方法
 
-```
+```js
 // mapをPromise.allで囲って、asyncにする
 const data = async Promise.all(targets.map(async(v)=>{
   const res = await fetch.get(...)
   return res
 }))
-
 ```
 
 map内のawait処理を一旦ためて、一気にPromise.allで同期実行する？
