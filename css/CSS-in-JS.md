@@ -16,10 +16,10 @@ JSXファイルに直接CSSを記入することで、コンポーネント単�
 
 また、Stateなどの動的なデータを記入したい際も簡単に記述することができる
 
-[[参考]](https://inside.dmm.com/entry/2018/05/14/react-styled-jsx)
+[[参考(dmm)]](https://inside.dmm.com/entry/2018/05/14/react-styled-jsx)
 
-# useStyle ( Material-UI )
+# useStyles / makeStyles ( Material-UI )
 
 Material-UIのCSS-in-JS機能
 
-React Hooｋsを使っている？
+[[参考(Qiita)]](https://qiita.com/gumiTECH/items/9e0f3172b8f85e93cbbe)
