@@ -21,6 +21,12 @@
 
   - `laravel new {プロジェクト名}`
   
+- envファイル生成
+
+  - `cp .env.example .env`
+  - APPキーの生成（アプリごとに設定する暗号化などに使用される鍵）
+  - `php artisan key:generate`
+  
 - ローカル起動
 
   - `php artisan serve`
