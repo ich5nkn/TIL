@@ -13,6 +13,12 @@ PHPのデータを使用したい場合は、echoでscript内に記述する
 
 配列を渡したいときは注意が必要
 
+- PHPで`json_encode`でJson形式にする
+
+- PHPの処理結果は文字列として出力されるので、シングルクオートなどで囲み、文字列としてJSで受け取る
+
+- JSでJSON.parseでJson形式から配列に変換する
+
 ```html
 <script>
 	var data = '<?php echo json_encode($data)?>'
