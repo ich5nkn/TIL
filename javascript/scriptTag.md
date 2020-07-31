@@ -17,7 +17,7 @@ PHPのデータを使用したい場合は、echoでscript内に記述する
 
 - PHPの処理結果は文字列として出力されるので、シングルクオートなどで囲み、文字列としてJSで受け取る
 
-- JSでJSON.parseでJson形式から配列に変換する
+- JSで`JSON.parse`でJson形式から配列に変換する
 
 ```html
 <script>
