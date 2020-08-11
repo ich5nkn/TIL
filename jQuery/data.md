@@ -4,7 +4,7 @@ jQueryでは、`data-`から始まるHTML属性を`data()`メソッドで扱う�
 
 これにより、HTML要素ごとのJSでのプログラミングを行いやすくできる
 
-```
+```html js
 <div id="test" data-val="value" data-val2="value2" />
 
 <script>
