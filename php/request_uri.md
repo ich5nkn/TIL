@@ -12,3 +12,5 @@ $filename = $URI['basename'];
 // ディレクトリ名か、ひとつ上の階層までのパスを取得
 $dir = $URI['dirname'];
 ```
+
+[[ 参考 ]](https://www.flatflag.nir87.com/basename-844)
