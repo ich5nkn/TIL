@@ -58,11 +58,11 @@ class HanSirjnlController extends Controller
 
     public function vegeName(Request $request){
         $req = $request->all();
-        $query = HAN_SIRJNL::select('DISTINCT HAN_SIRJNL.HINCD,MST_HINMST.HINNMJ');
+        $query = HAN_SIRJNL::select('HAN_SIRJNL.HINCD','MST_HINMST.HINNMJ');
+        $query->distinct();
         $query->join('MST_HINMST','HAN_SIRJNL.HINCD','=','MST_HINMST.HINCD');
-        $query->orderBy('HAN_SIRJNL.HANCD');
-
-        return $query->paginate(15);
+        $query->orderBy('HAN_SIRJNL.HINCD');
+        return $query->get();
     }
 }
 
