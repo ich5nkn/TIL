@@ -17,3 +17,22 @@ Google Fonts などが有名 [[ リンク ]](https://googlefonts.github.io/japan
 全体で使いたい場合は、上の方で指定しておく
 
 `material-ui`のフォントは別で指定してあるため、material-uiの部品に適用する場合は指定する必要がある
+
+例：`app.js`の`ThemeProvider`を指定しているところで指定する
+
+```
+const theme = createMuiTheme({
+    palette: {
+        primary: cyan,
+    },
+    typography: {
+        fontFamily: [
+            'Noto Sans JP',
+            // 'M PLUS Rounded 1c',
+            'Roboto',
+            'Arial',
+            'sans-serif',
+        ].join(','),
+    }
+});
+```
