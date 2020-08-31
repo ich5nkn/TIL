@@ -38,3 +38,16 @@ HTMLのheadタグでCSSを読み込む前にviewportを埋め込む
 
 例：スマホ時はヘッダメニューを非表示にして代わりに三本バーメニューを表示させる
 
+### overflow (auto)
+
+テーブルの表示をスマホ時だけスクロールさせる際などに使用する
+
+tableの親要素に`overflow:auto`を指定
+
+tableに`minWidrh`で最小幅を指定すると、その幅より画面が小さい場合、スクロールできる
+
+ただし、親要素の幅を明確に指定してやる必要があり、`width:100%`などにしている場合、祖要素などの幅も気にする必要がある
+
+[[ 参考 ]](https://webcommu.net/phone-table-scroll/) [[ 参考２ ]](https://b-risk.jp/blog/2018/07/table-css/)
+
+
