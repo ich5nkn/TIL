@@ -25,3 +25,5 @@ where: {
 ただし、イコールはつかないので、「以下」を条件にしたい場合は
 
 `Not ( MoreThan ( dateString ) )` のように符号を逆転する必要がある
+
+[[ issue ]](https://github.com/typeorm/typeorm/issues/3092)
