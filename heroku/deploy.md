@@ -38,4 +38,4 @@ MySQLも使えるらしい [[参考 Qiita]](https://qiita.com/koukidesu/items/21
 
 `master`ブランチじゃないとビルドされないようなので注意
 
-※ 作業中のブランチをテストサーバに上げたいときは、一旦masterにmergeｍして取り消す
+※ 作業中のブランチをテストサーバに上げたいときは、一旦`master`に`merge`して取り消す
