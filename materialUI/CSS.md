@@ -19,3 +19,9 @@ material-uiのAPIにCSSと記述されている部分がある
 ```
 
 このパーツのlabelに色をつけたい
+
+[コンポーネントのカスタマイズ](https://material-ui.com/customization/components/)
+
+今回はlabelに`<span>`でスタイリングして渡したことで解決した
+
+APIのtypeがnodeになっているpropsにはタグごと渡せるらしい
