@@ -1,6 +1,6 @@
 存在するときは、表示し、存在しないときは表示しないなどのよくある条件分岐を省略して書ける
 
-```
+```js
 const data = getData() // {name:'hoge'} or undefined
 
 const name = data?.name 
