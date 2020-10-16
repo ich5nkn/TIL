@@ -38,3 +38,5 @@ return query.getManyAndCount();
 ただ、RawManyの場合はキー名が変わるため、フロント側PGの修正が必要。
 
 また、`AndCount`は使用できないため、フロント側の`res.length`で対応した
+
+基本的に最初から`getRawMany`を使ったほうがいいのではないかと考えている。
