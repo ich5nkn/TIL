@@ -14,7 +14,7 @@
 
 このように記述してある
 
-### yarn build をしたとき
+## yarn build をしたとき
 
 `build`を例に挙げると、`next build`をした後に、`tsc tsconfig.server.json`をしている（op省略）
 
@@ -150,7 +150,7 @@ module.exports = withCSS({
 
 最終的に`.next`にnext.jsのコンパイル結果、`dist`にtsのコンパイル結果が配置される
 
-### yarn start をしたとき
+## yarn start をしたとき
 
 `cross-env NODE_ENV=production`で環境変数をセットし、`node dist/server.js`でサーバを起動している
 
