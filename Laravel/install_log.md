@@ -138,5 +138,9 @@ if (document.getElementById('example')) {
 
 さらに`yarn hot`を動かすと、上記のコンポーネントも描画される
 
+`yarn prod`を実行すると、`yarn hot`しなくても描画される
+
+これは、node.jsの`yarn dev`,`yarn build`(&`yarn start`)と似ている
+
 
 
