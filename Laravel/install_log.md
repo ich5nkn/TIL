@@ -12,7 +12,7 @@
 
 必要PHPバージョンは7.2〜
 
-```
+```fish
 $ php --version
 PHP 7.4.10 (cli) (built: Sep  3 2020 18:21:42) ( NTS )
 ```
