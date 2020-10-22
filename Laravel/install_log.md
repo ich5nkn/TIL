@@ -142,5 +142,43 @@ if (document.getElementById('example')) {
 
 これは、node.jsの`yarn dev`,`yarn build`(&`yarn start`)と似ている
 
+## TypeSctiptを導入
 
+```
+$ yarn add -D typescript ts-loader @types/node @types/react @types/react-dom
+```
 
+`yarn add`に`-D`オプションをつけると、開発時のみに使用できる
+
+```
+$ ./node_modules/.bin/tsc --init
+```
+
+ルートディレクトリに`tsconfig.json`が生成される
+
+`tsconfig.json`を開くと、各設定とコメントが書いてある
+
+jsxの行だけ、`"jsx":"react"`に書き換える
+
+次に`webpack.mix.js`を書き換える
+
+```
+// mix.react('resources/js/app.js', 'public/js')
+mix.ts('resources/ts/index.tsx', 'public/js')
+```
+
+`mix.react`を`mix.ts`に書き換え、第一引数のパスを変える（対象ファイルのパス？）
+
+`welcome.blade.php`の
+
+```
+<script src="{{mix('js/app.js')}}"></script>
+```
+
+を
+
+```
+<script src="{{mix('js/index.js')}}"></script>
+```
+
+に書き換える（出力先のファイル名が変わったため）
