@@ -171,3 +171,96 @@ mix.ts('resources/ts/index.tsx', 'public/js')
 
 `welcome.blade.php`の`<script src="{{mix('js/app.js')}}"></script>`を  
 `<script src="{{mix('js/index.js')}}"></script>`に書き換える（出力先のファイル名が変わったため）
+
+また、中身も、一旦全部消してbodyに`app`というidのdiv要素を配置しておく
+
+`resource/ts/index.tsx`を下記のように作成し、`yarn hot`で動かすと、無事ホットデプロイできていることがわかった
+
+```
+// index.tsx
+import React from 'react'
+import ReactDOM from 'react-dom';
+
+const APP: React.FC = () => {
+    return (
+        <>SinglePageApplication</>
+    )
+}
+
+export default APP
+
+if (document.getElementById('app')) {
+    ReactDOM.render(<APP />, document.getElementById('app'));
+}
+
+```
+
+## react-routerの導入
+
+まずはパッケージのインストール
+
+```
+$ yarn add react-router-dom
+```
+
+`ts/components/ui/Navbar.tsx`を作る
+
+```
+// Navbar.tsx
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const Navbar: React.FC = () => {
+    return (
+        <div>
+            <Link to='/'>HOME</Link>
+            <Link to='test'>TEST</Link>
+        </div>
+    )
+}
+
+export default Navbar;
+```
+
+@typesをインストールするの忘れてエラーが出ていたので追加
+
+```
+$ yarn add @types/react-router-dom
+```
+
+`index.tsx`を修正
+
+```
+// index.tsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Navbar from './components/ui/Navbar'
+import Home from './pages/Home'
+import Test from './pages/Test'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+const APP: React.FC = () => {
+    return (
+        <>
+            <Router>
+                <div>
+                    <Navbar /><br />
+                    <Route exact path='/' component={Home} />
+                    <Route path='/test' component={Test} />
+                </div>
+            </Router>
+        </>
+    )
+}
+
+export default APP
+
+if (document.getElementById('app')) {
+    ReactDOM.render(<APP />, document.getElementById('app'));
+}
+
+```
+
+HomeとTestについては簡単なものを作成
+
+ページ遷移の実装が確認できた
