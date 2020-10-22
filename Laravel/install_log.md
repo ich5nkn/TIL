@@ -169,16 +169,5 @@ mix.ts('resources/ts/index.tsx', 'public/js')
 
 `mix.react`を`mix.ts`に書き換え、第一引数のパスを変える（対象ファイルのパス？）
 
-`welcome.blade.php`の
-
-```
-<script src="{{mix('js/app.js')}}"></script>
-```
-
-を
-
-```
-<script src="{{mix('js/index.js')}}"></script>
-```
-
-に書き換える（出力先のファイル名が変わったため）
+`welcome.blade.php`の`<script src="{{mix('js/app.js')}}"></script>`を  
+`<script src="{{mix('js/index.js')}}"></script>`に書き換える（出力先のファイル名が変わったため）
