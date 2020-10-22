@@ -264,3 +264,201 @@ if (document.getElementById('app')) {
 HomeとTestについては簡単なものを作成
 
 ページ遷移の実装が確認できた
+
+## jwt-authの導入
+
+laravelにjwtでのログイン認証を追加する
+
+```
+# composer require "tymon/jwt-auth"
+```
+
+アウトオブメモリーエラーが出たが、既に入っていたから？
+
+`composer.json`の中を確認したら入っていたので良しとする
+
+次に、シークレットの作成
+
+```
+$ php artisan jwt:secret
+```
+
+エラー：`There are no commands defined in the "jwt" namespace.`
+
+調べたところ、
+
+```
+$ php artisan config:clear
+$ composer update
+```
+
+した後に実行したらいけた
+
+```
+$ php artisan jwt:secret
+```
+
+.envファイルの最終行に`JWT_SECRET`が追加されていることを確認
+
+次に、設定ファイル作成
+
+```
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+```
+
+`config/jwt.php`が生成されていることを確認
+
+`App/User.php`を修正
+
+```php
+~ ~ ~
+use Tymon\JWTAuth\Contracts\JWTSubject;
+
+class User extends Authenticatable implements JWTSubject
+{
+~ ~ ~
+ public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+ public function getJWTCustomClaims()
+    {
+        return [];
+    }
+```
+
+`config/auth.php`を修正
+
+```php
+'defaults' => [
+    'guard' => 'api',
+    'passwords' => 'users',
+],
+
+...
+
+'guards' => [
+    'api' => [
+        'driver' => 'jwt',
+        'provider' => 'users',
+    ],
+],
+
+```
+
+`guard`を`api`に変更し、`api`の`driver`に`jwt`を設定する
+
+これでjwt-authを使う準備は整った（らしい）
+
+テストのために、jwt-authのコントローラを作成する
+
+```
+$ php artisan make:controller AuthController
+```
+
+`App/Http/Controller/AuthController.php`が生成されるので中身を記述
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+
+class AuthController extends Controller
+{
+    /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login']]);
+    }
+
+    /**
+     * Get a JWT via given credentials.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function login()
+    {
+        $credentials = request(['email', 'password']);
+
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        return $this->respondWithToken($token);
+    }
+
+    /**
+     * Get the authenticated User.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function me()
+    {
+        return response()->json(auth()->user());
+    }
+
+    /**
+     * Log the user out (Invalidate the token).
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function logout()
+    {
+        auth()->logout();
+
+        return response()->json(['message' => 'Successfully logged out']);
+    }
+
+    /**
+     * Refresh a token.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function refresh()
+    {
+        return $this->respondWithToken(auth()->refresh());
+    }
+
+    /**
+     * Get the token array structure.
+     *
+     * @param  string $token
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function respondWithToken($token)
+    {
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => auth()->factory()->getTTL() * 60
+        ]);
+    }
+}
+```
+
+次に`routes/api.php`でrouting登録
+
+```php
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
+```
