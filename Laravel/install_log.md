@@ -462,3 +462,65 @@ Route::group([
 
 });
 ```
+
+ちゃんと`jwt-auth`が動くかを調べる
+
+```
+$ php artisan make:seeder UsersTableSeeder
+```
+
+`database/seeds/UserTableSeeder`を編集
+
+```php
+<?php
+
+use Illuminate\Database\Seeder;
+
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('users')->insert([
+            'name' => 'test',
+            'email' => 'test@test.com',
+            'password' => bcrypt('testtest'),
+        ]);
+    }
+}
+```
+
+`database/seeds/DatabaseSeeder`を開き、`UsersTableSeeder`のコメントアウトを外す
+
+```
+$ php artisan db:seed
+```
+
+エラー発生
+
+DBを立てていなかったことを思い出し、DockerでMySQLを起動する
+
+起動確認後、実行したがやはりエラー
+
+```
+ Illuminate\Database\QueryException  : SQLSTATE[HY000] [2002] Connection refused (SQL: insert into `users` (`name`, `email`, `password`) values (test, test@test.com, $2y$10$KQ./P5PNFUNN/j8SEfi7RehQ4Q7Ebg/1KynJeSMRycvoIYb6E3j9.))
+
+  at /Users/koga/projects/model-admin/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669
+    665|         // If an exception occurs when attempting to run a query, we'll format the error
+    666|         // message to include the bindings with SQL, which will make this exception a
+    667|         // lot more helpful to the developer instead of just the database's errors.
+    668|         catch (Exception $e) {
+  > 669|             throw new QueryException(
+    670|                 $query, $this->prepareBindings($bindings), $e
+    671|             );
+    672|         }
+    673|
+
+  Exception trace:
+```
+
+
