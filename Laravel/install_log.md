@@ -12,7 +12,7 @@
 
 必要PHPバージョンは7.2〜
 
-```sh
+```
 $ php --version
 PHP 7.4.10 (cli) (built: Sep  3 2020 18:21:42) ( NTS )
 ```
@@ -162,7 +162,7 @@ jsxの行だけ、`"jsx":"react"`に書き換える
 
 次に`webpack.mix.js`を書き換える
 
-```
+```js
 // mix.react('resources/js/app.js', 'public/js')
 mix.ts('resources/ts/index.tsx', 'public/js')
 ```
@@ -176,7 +176,7 @@ mix.ts('resources/ts/index.tsx', 'public/js')
 
 `resource/ts/index.tsx`を下記のように作成し、`yarn hot`で動かすと、無事ホットデプロイできていることがわかった
 
-```
+```jsx
 // index.tsx
 import React from 'react'
 import ReactDOM from 'react-dom';
@@ -205,7 +205,7 @@ $ yarn add react-router-dom
 
 `ts/components/ui/Navbar.tsx`を作る
 
-```
+```jsx
 // Navbar.tsx
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -230,7 +230,7 @@ $ yarn add @types/react-router-dom
 
 `index.tsx`を修正
 
-```
+```jsx
 // index.tsx
 import React from 'react'
 import ReactDOM from 'react-dom'
