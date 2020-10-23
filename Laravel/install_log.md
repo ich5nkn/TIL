@@ -524,8 +524,41 @@ DBを立てていなかったことを思い出し、DockerでMySQLを起動す�
 
 ローカルのMySQLではなく、AWSにつないだら上手く行ったので良しとする
 
+（データベースの接続の設定はenvファイルに記載する）
+
+また、先にデータベースを作成してマイグレーションでテーブルを作成する必要がある
+
 ```
 $ php artisan migrate
 $ php artisan db:seed
+```
+
+Insomniaで以下の内容を`localhost:8000/api/auth/login`にPOSTしてみる
+
+```json
+{
+	"email":"test@test.com",
+	"password":"testtest"
+}
+```
+
+レスポンス
+
+```json
+{
+  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYwMzQyOTUwNywiZXhwIjoxNjAzNDMzMTA3LCJuYmYiOjE2MDM0Mjk1MDcsImp0aSI6ImNocUxVNWJsZnlvaURlc3QiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.oBTnPyN9HT5OOz98glKChBKoDc8bzcHJY_A50Sx2FGI",
+  "token_type": "bearer",
+  "expires_in": 3600
+}
+```
+
+無事、ログインしてアクセストークンが返ってきた
+
+ちなみに、パスワードなどを間違えると下記の内容が返ってくる
+
+```json
+{
+  "error": "Unauthorized"
+}
 ```
 
