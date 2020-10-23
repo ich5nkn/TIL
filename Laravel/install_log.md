@@ -274,12 +274,18 @@ HomeとTestについては簡単なものを作成
 laravelにjwtでのログイン認証を追加する
 
 ```
-# composer require tymon/jwt-auth:1.0.0-rc.5
+$ composer require tymon/jwt-auth:1.0.0-rc.5
 ```
 
 アウトオブメモリーエラーが出たが、既に入っていたから？
 
-`composer.json`の中を確認したら入っていたので良しとする
+`composer.json`の中を確認したら入っていたのでcomposer再実行
+
+```
+$ composer update 
+```
+
+今度は上手く行ったぽい
 
 次に、シークレットの作成
 
@@ -287,27 +293,12 @@ laravelにjwtでのログイン認証を追加する
 $ php artisan jwt:secret
 ```
 
-エラー：`There are no commands defined in the "jwt" namespace.`
-
-調べたところ、
-
-```
-$ php artisan config:clear
-$ composer update
-```
-
-した後に実行したらいけた
-
-```
-$ php artisan jwt:secret
-```
-
-.envファイルの最終行に`JWT_SECRET`が追加されていることを確認
+成功、`.env`ファイルの最終行に`JWT_SECRET`が追加されていることを確認
 
 次に、設定ファイル作成
 
 ```
-php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+$ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
 ```
 
 `config/jwt.php`が生成されていることを確認
