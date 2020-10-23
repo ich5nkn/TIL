@@ -274,7 +274,7 @@ HomeとTestについては簡単なものを作成
 laravelにjwtでのログイン認証を追加する
 
 ```
-# composer require "tymon/jwt-auth"
+# composer require tymon/jwt-auth:1.0.0-rc.5
 ```
 
 アウトオブメモリーエラーが出たが、既に入っていたから？
