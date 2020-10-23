@@ -562,3 +562,21 @@ Insomniaで以下の内容を`localhost:8000/api/auth/login`にPOSTしてみる
 }
 ```
 
+次に、`localhost:8000/api/auth/me`に下記の情報をヘッダーにセットしてPOSTする
+
+```
+Authorization : Bearer [access_token]
+```
+
+DBのuser情報が返ってくる
+
+```json
+{
+  "id": 1,
+  "name": "test",
+  "email": "test@test.com",
+  "email_verified_at": null,
+  "created_at": null,
+  "updated_at": null
+}
+```
