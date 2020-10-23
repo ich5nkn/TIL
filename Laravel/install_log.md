@@ -524,4 +524,8 @@ DBを立てていなかったことを思い出し、DockerでMySQLを起動す�
 
 ローカルのMySQLではなく、AWSにつないだら上手く行ったので良しとする
 
+```
+$ php artisan migrate
+$ php artisan db:seed
+```
 
