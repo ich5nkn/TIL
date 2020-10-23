@@ -527,4 +527,10 @@ DBを立てていなかったことを思い出し、DockerでMySQLを起動す�
   Exception trace:
 ```
 
+どうやらMySQLの接続が上手く行っていない模様
+
+ローカルのMySQLにSequelProからの接続もできなかったため、MySQL側の問題
+
+ローカルのMySQLではなく、AWSにつないだら上手く行ったので良しとする
+
 
