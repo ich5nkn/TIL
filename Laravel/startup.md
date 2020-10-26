@@ -26,6 +26,7 @@
   - `cp .env.example .env`
   - APPキーの生成（アプリごとに設定する暗号化などに使用される鍵）
   - `php artisan key:generate`
+  - `APP_NAME`に日本語のアプリ名を入力するとおかしくなる
   
 - ローカル起動
 
