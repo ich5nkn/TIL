@@ -45,3 +45,17 @@ POSTメソッドを使えば様々なデータを渡すことが出来る
 テストPGや生PHPでLaravelの機能を使わないAPIを作成する際に使用する
 
 拡張子も含めてのファイル名指定なので注意
+
+# api
+
+`/routes/api.php`にはAPIのルーティングを記述する
+
+このファイル内のルーティングパスには`/api`がプレフィックスされる
+
+例： `Route::post('login', 'AuthController@login');`には`/api/login`でアクセスできる
+
+フロント側とAPIを簡単に分別することができ、便利
+
+`RouteServiceProvider`を修正すればこの設定を変えることが出来るらしい。
+
+
