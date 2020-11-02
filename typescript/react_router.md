@@ -8,7 +8,7 @@ react-router-domを使用すると、`app.tsx`に`<Router>`を定義する
 
 ### 型を指定する方法
 
-```
+```ts
 import { RouteComponentProps } from 'react-router-dom'
 const Home = (props: RouteComponentProps): JSX.Element => {
   // 省略
@@ -35,7 +35,7 @@ const Home = (props: RouteComponentProps): JSX.Element => {
 
 その場合は、以下のようにTypeを拡張する
 
-```
+```ts
 interface Props extends RouteComponentProps<{}> {
   id:number
 }
