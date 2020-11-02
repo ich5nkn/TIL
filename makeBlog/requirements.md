@@ -10,6 +10,12 @@
 
 デザインがオシャレ
 
+# 機能
+
+ページ構成
+
+[ profile / blog / portofolio / skills ]
+
 
 # 使用する技術
 
@@ -20,4 +26,5 @@ React / Next.js
 Jest
 
 Vercel (JamStack)
+
 
