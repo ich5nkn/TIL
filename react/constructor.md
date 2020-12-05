@@ -1,0 +1,7 @@
+### ComponentDidMountでのsetStateは非推奨
+
+componentDidMountは、初回レンダー後に動作する
+
+setStateをするとrenderが実行されるので、結果的に初回ロードではrenderが２回行われることになる
+
+stateの初期化はconstructorで行う
