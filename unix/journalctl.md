@@ -43,7 +43,7 @@ rootユーザで実行する、ジャーナルは`jkキー`で移動する
 ### 最新のログを確認（降順）
 
 ```
-# journalctl -f
+# journalctl -r
 ```
 
 その他コマンドや使いかた [[ 参考 ]](https://qiita.com/hana_shin/items/96095571b7bf1b721255)
