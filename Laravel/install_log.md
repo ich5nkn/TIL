@@ -146,6 +146,17 @@ if (document.getElementById('example')) {
 
 これは、node.jsの`yarn dev`,`yarn build`(&`yarn start`)と似ている
 
+## timezoneの設定
+
+`config/app.php`でtimezoneを変更する
+
+```php
+// 'timezone' => 'UTC',
+'timezone' => 'Asia/Tokyo',
+```
+
+これをしておかないと、日付のズレによるバグなどが生じやすくなる
+
 ## TypeSctiptを導入
 
 ```
