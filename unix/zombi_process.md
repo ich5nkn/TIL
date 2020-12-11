@@ -17,7 +17,7 @@ lsof -n -P -i : {port number}
 例 : Reactアプリを3000ポートで立ち上げていた場合
 
 ```
-# lsof -n -P -i :{3000}
+# lsof -n -P -i:{3000}
 COMMAND   PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 node    63358 hoge   80u  IPv6 0x72311b73c4e7b225      0t0  TCP *:3000 (LISTEN)
 ```
