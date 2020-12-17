@@ -1,5 +1,7 @@
 HTML5でのフォームバリデーションのエラーメッセージを任意のものに変更する
 
+[[参考]](https://girliemac.com/blog/2012/12/01/html5-form-validation-jp/)　[[参考２]](https://qiita.com/leedohyung-dba/items/b762e21018edc4d0387c)
+
 ```html
 <html>
 
