@@ -100,3 +100,70 @@ useEffect (()=>{
 
 このようにasyncを使う関数を定義して実行する必要がある
 
+# useContext , createContext
+
+Reduxのようなコンポーネントの親子関係を超えたstate管理ができる
+
+App > ComponentA > ComponentB > ComponentC のような構造を想定する
+
+それぞれ、子コンポーネントをimportしている
+
+まずは親のAppで`createContext`を使い、Contextに名前をつけて定義し`export`する
+
+次に、Contextを使用するコンポーネントを、命名したContext.provider配下に置く
+
+そのときに、valueにstateとset関数を渡すと子でどちらも受け取れる
+
+```js
+// App
+import React, {createContext, useState} from 'react'
+import ComponentA from './components/ComponentA'
+
+// ここでコンテキストをエクスポートする
+export const UserContext = createContext()
+
+const App = () => {
+    const [user, setUser] = useState(undefined)
+
+    return(
+        <div className="App">
+            // ここでプロバイダーで囲み、valueを渡す
+            <UserContext.Provider value={[user,setUser]}>
+                <ComponentA />
+            </UserContext.Provider>
+        </div>
+    )
+}
+```
+
+```js
+// ComponentC
+import React, {useContext} from 'react'
+import {UserContext} from '../App'
+
+const ComponentC = () => {
+    const [user, setUser] = useContext(UserContext)
+    
+    if(user){
+        return(
+            <div>
+                <p>{user.name}でログインしています</p>
+                <button onClick={()=>setUser(undefined)}>
+                    ログアウト
+                </button>
+            </div>
+        )
+    }
+    
+    return(
+        <div>
+            <p>ログインしてください</p>
+            <button onClick={()=>setUser({name:hoge})}>
+                ログイン
+            </button>
+        </div>
+    )
+}
+```
+
+
