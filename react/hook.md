@@ -166,4 +166,8 @@ const ComponentC = () => {
 }
 ```
 
+typescriptを用いると、createContext時の初期値をundefinedにしたとき、  
+毎回undefinedかチェックしないといけないため面倒くさい  
+createContextをラップした関数を作成することで手間を回避できる
 
+[[ 参考(Qiita) ]](https://qiita.com/johnmackay150/items/88654e5064290c24a32a)
