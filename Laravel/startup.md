@@ -20,6 +20,9 @@
 - プロジェクト作成
 
   - `laravel new {プロジェクト名}`
+  - ### (追記)このやり方だと最新バージョンのLaravelしか作成できない
+  - バージョンを指定するときはcomposerを使う、以下は６系のプロジェクトを作成する例
+  - `composer create-project "laravel/laravel=6.*" projectName`
   
 - envファイル生成
 
