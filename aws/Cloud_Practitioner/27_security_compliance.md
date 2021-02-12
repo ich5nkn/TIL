@@ -18,6 +18,13 @@ AWSのセキュリティ・コンプライアンスの３つの柱
 
 - リスク管理
 
+![スクリーンショット 2021-02-12 23 55 35](https://user-images.githubusercontent.com/56820273/107783601-cd78e280-6d8d-11eb-8e67-7d40f7166876.png)
+
 - 統制環境
 
+![スクリーンショット 2021-02-12 23 55 19](https://user-images.githubusercontent.com/56820273/107783574-c3ef7a80-6d8d-11eb-8a93-fa0cc710d040.png)
+
 - 情報セキュリティ
+
+![スクリーンショット 2021-02-12 23 54 59](https://user-images.githubusercontent.com/56820273/107783532-b89c4f00-6d8d-11eb-83d3-34a77ca49825.png)
+
